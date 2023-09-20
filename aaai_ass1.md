@@ -230,12 +230,12 @@ Here are the Docker commands for reference:
 
 - Pulling the PyTorch image:
    ```
-   docker pull nvcr.io/nvidia/pytorch:11.2-py3-pytorch-1.10.0
+   docker pull nvcr.io/nvidia/pytorch:23.08-py3
    ```
 
 - Running the Docker container:
    ```
-   docker run --gpus all -it --name dlprof_container -v /path/to/your/repo:/workspace nvcr.io/nvidia/pytorch:11.2-py3-pytorch-1.10.0
+   docker run --gpus all -it --name dlprof_container -v /path/to/your/repo:/workspace nvcr.io/nvidia/pytorch:23.08-py3 
    ```
    
 - Installing libraries in the container:
