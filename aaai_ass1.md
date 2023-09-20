@@ -237,4 +237,19 @@ Here are the Docker commands for reference:
    ```
    docker run --gpus all -it --name dlprof_container -v /path/to/your/repo:/workspace nvcr.io/nvidia/pytorch:11.2-py3-pytorch-1.10.0
    ```
-
+   
+- Installing libraries in the container:
+   ```
+   pip install nvidia-pyindex
+   pip install nvidia-dlprofviewer
+   pip install nvidia-dlprof[pytorch]
+   pip install kaggle
+   ```  
+- Running the py files in the container:
+   ```
+   dlprof --force=true --mode="pytorch"  python path/to/your/repo/model.py
+   ```
+- Viewing results on DLprof Viewer:
+   ```
+   dlprofviewer dlprof_dldb.sqlite
+   ```
