@@ -1,4 +1,43 @@
-# PyTorch Image Classification
+
+
+---
+
+# **Optimizing Neural Network Models Using DLProf and APEX: A Comprehensive Analyis**
+
+### **Docker Commands**
+
+Here are the Docker commands for reference:
+
+- Pulling the PyTorch image:
+   ```
+   docker pull nvcr.io/nvidia/pytorch:23.08-py3
+   ```
+
+- Running the Docker container:
+   ```
+   docker run --gpus all -it --name dlprof_container -v /path/to/your/repo:/workspace nvcr.io/nvidia/pytorch:23.08-py3 
+   ```
+   
+- Installing libraries in the container:
+   ```
+   pip install nvidia-pyindex
+   pip install nvidia-dlprofviewer
+   pip install nvidia-dlprof[pytorch]
+   pip install kaggle
+   ```  
+- Running the py files in the container:
+   ```
+   dlprof --force=true --mode="pytorch"  python path/to/your/repo/model.py
+   ```
+- Viewing results on DLprof Viewer:
+   ```
+   dlprofviewer dlprof_dldb.sqlite
+   ```
+
+
+# Previous Reference
+
+## PyTorch Image Classification
 
 This repo contains tutorials covering image classification using [PyTorch](https://github.com/pytorch/pytorch) 1.7, [torchvision](https://github.com/pytorch/vision) 0.8, [matplotlib](https://matplotlib.org/) 3.3 and [scikit-learn](https://scikit-learn.org/stable/index.html) 0.24, with Python 3.8.
 
@@ -6,7 +45,7 @@ We'll start by implementing a multilayer perceptron (MLP) and then move on to ar
 
 **If you find any mistakes or disagree with any of the explanations, please do not hesitate to [submit an issue](https://github.com/bentrevett/pytorch-image-classification/issues/new). I welcome any feedback, positive or negative!**
 
-## Getting Started
+### Getting Started
 
 To install PyTorch, see installation instructions on the [PyTorch website](https://pytorch.org/).
 
@@ -16,7 +55,7 @@ The instructions to install PyTorch should also detail how to install torchvisio
 pip install torchvision
 ```
 
-## Tutorials
+### Tutorials
 
 * 1 - [Multilayer Perceptron](https://github.com/bentrevett/pytorch-image-classification/blob/master/1_mlp.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bentrevett/pytorch-image-classification/blob/master/1_mlp.ipynb)
 
@@ -38,7 +77,7 @@ pip install torchvision
 
     In this tutorial we will be implementing the [ResNet](https://arxiv.org/abs/1512.03385) model. We'll show how to load your own dataset, using the [CUB200](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) dataset as an example, and also how to use learning rate schedulers which dynamically alter the learning rate of your model whilst training. Specifially, we'll use the one cycle policy introduced in [this](https://arxiv.org/abs/1803.09820) paper and is now starting to be commonly used for training computer vision models.
 
-## References
+### References
 
 Here are some things I looked at while making these tutorials. Some of it may be out of date.
 
